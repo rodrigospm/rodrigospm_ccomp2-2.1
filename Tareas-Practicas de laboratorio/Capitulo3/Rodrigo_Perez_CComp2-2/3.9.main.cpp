@@ -3,7 +3,7 @@ amount does not exceed the Account's balance. If it does, the balance should lef
 exceeded account balance." Modify AccountTest (Fig 3.9) to test member function withdraw */
 
 #include <iostream>
-#include "3_9.h"
+#include "3.9.h"
 
 using namespace std;
 

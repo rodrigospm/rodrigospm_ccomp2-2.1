@@ -6,7 +6,8 @@ exceeded account balance." Modify AccountTest (Fig 3.9) to test member function 
 
 class Account {
     public:
-        Account(std::string accountName, int initialBalance): name{accountName} {
+        Account(std::string accountName, int initialBalance)
+        : name{accountName} {
             if (initialBalance > 0) {
                 balance = initialBalance;
             }
