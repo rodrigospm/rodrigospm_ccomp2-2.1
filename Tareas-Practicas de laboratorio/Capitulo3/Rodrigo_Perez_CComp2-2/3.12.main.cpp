@@ -20,4 +20,9 @@ int main() {
     date1.displayDate();
     date2.displayDate();
 
+    cout << "\n-------------------------------" << endl;
+    cout << "Date day is: " << date1.getDay() << endl;
+    cout << "Date month is: " << date1.getMonth() << endl;
+    cout << "Date year is: " << date1.getYear() << endl;
+
 }

@@ -14,7 +14,10 @@ class Date {
         Date(int month, int day, int year)
         : da{day},
         ye{year} {
-            if (month > 12) {
+            if (month < 12) {
+                mo = month;
+            }
+            else {
                 mo = 1;
             }
         }

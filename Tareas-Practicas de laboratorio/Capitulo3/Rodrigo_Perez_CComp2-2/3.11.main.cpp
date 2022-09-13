@@ -13,6 +13,14 @@ using namespace std;
 int main() {
     MotorVehicle vehicle1{"Honda", "Diesel", 2004, "Red", 1000};
 
+    cout << "Current vehicle details: " << endl;
     vehicle1.displayCarDetails();
+
+    cout << "\n-------------------------------" << endl;
+    cout << "Vehicles make is: " << vehicle1.getMake() << endl;
+    cout << "Vehicles fuel type is: " << vehicle1.getFuel() << endl;
+    cout << "Vehicles year of manufacture is: " << vehicle1.getYear() << endl;
+    cout << "Vehicles color is: " << vehicle1.getColor() << endl;
+    cout << "Vehicles enginec capacity is: " << vehicle1.getEngine() << endl;
 
 }
