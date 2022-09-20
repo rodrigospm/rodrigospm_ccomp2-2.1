@@ -3,18 +3,31 @@ What is the 10 001st prime number? */
 
 #include <iostream>
 using namespace std;
+  
+bool esPrimo(int n) {
+    if (n == 1 || n == 0)
+        return false;
 
-int main() {
-    int i = 1;
+    for (int i = 2; i < n; i++) {
+        if (n % i == 0)
+            return false;
+    }
+    return true;
+}
+
+int main()
+{
+    long long N = 999999999999;
     int j = 1;
-
-    while (i <= 100) {
-        while (j <= 6) {
-            if (i % j == 0){
-                cout << i << " ";
+  
+    for (int i = 1; i <= N; i++) {
+        if (esPrimo(i)) {
+            cout << i << " ";
+            if (j >= 10001) {
+                break;
             }
             j = j + 1;
         }
-        i = i + 1;
     }
+    return 0;
 }
