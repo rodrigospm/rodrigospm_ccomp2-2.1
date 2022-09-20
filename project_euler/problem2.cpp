@@ -21,5 +21,5 @@ int main() {
         cout << a << " ";
     }
     cout << "\nLa suma es: " << sum;
-
+    return 0;
 }
