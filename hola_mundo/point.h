@@ -18,6 +18,10 @@ class Point {
             return y;
         }
 
+        void print() const {
+            std::cout << "(" << x << ", " << y << ")";
+        }
+
     private:
         int x, y;
 };
