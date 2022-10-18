@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void intercambio(int &a, int &b) {
+void intercambio(Point &a, Point &b) {
     int tmp = a;
     a = b;
     b = tmp;
@@ -12,7 +12,7 @@ void intercambio(int &a, int &b) {
 void bsort(Point array[], int tam) {
     for (int i = 0; i < tam; i++) {
         for(int j = i + 1; j < tam; j++) {
-            if(array[i] > array[j])
+            if(array[i].getX() > array[j].getX())
             intercambio(array[i], array[j]);
         }
     }
