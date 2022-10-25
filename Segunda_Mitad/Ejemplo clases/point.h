@@ -3,7 +3,12 @@
 
 class Point {
     public:
-        Point(int _x, int _y) : x(_x), y(_y) {}
+        Point(int _x, int _y) : x(_x), y(_y) {
+            // std::cout << "Constructor" << std::endl;
+        }
+        ~Point() {
+            // std::cout << "Destructor" << std::endl;
+        }
 
         void setX(int _x) {
             x = _x;
@@ -19,7 +24,7 @@ class Point {
         }
 
         void print() const {
-            std::cout << "(" << x << ", " << y << ")";
+            std::cout << "(" << x << ", " << y << ") ";
         }
 
     private:
