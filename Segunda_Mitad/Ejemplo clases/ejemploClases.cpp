@@ -11,8 +11,20 @@ void printArray(const Point *array, int tam) {
     cout << "]" << endl;
 }
 
+void printArrayRec(const Point *array, int tam) {
+    if (tam <= 0) {
+        return;
+    }
+    else {
+        array->print();
+        printArrayRec(++array, --tam)
+    }
+        
+    
+}
+
 int main() {
-    Point p1(0, 0);
+    Point p1;
     Point p2(12, 5);
     Point p3(3, 4);
     Point p4(7, 1);
@@ -36,7 +48,7 @@ int main() {
     */
     
     arreglo->print();
-    ptr->print();
+    // ptr->print();
     cout << "\n-\n";
     printArray(arreglo, 5);
 
