@@ -17,10 +17,8 @@ void printArrayRec(const Point *array, int tam) {
     }
     else {
         array->print();
-        printArrayRec(++array, --tam)
+        printArrayRec(++array, --tam);
     }
-        
-    
 }
 
 int main() {
