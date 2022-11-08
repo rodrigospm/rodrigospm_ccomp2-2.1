@@ -1,39 +1,41 @@
 #include <iostream>
-#include "DynamicIntArray.h"
+#include "DynamicPointArray.h"
 
-DynamicIntArray::DynamicIntArray() {
+DynamicPointArray::DynamicPointArray() {
     this->size = 0;
-    data = new int[0];
+    data = new Point[0];
 }
 
-DynamicIntArray::DynamicIntArray(const int arr[], int size){
+DynamicPointArray::DynamicPointArray(const Point arr[], int size){
     this->size = size;
-    data = new int[size];
+    data = new Point[size];
     for(int i = 0; i < size; i++)
         data[i] = arr[i];
 }
 
-DynamicIntArray::DynamicIntArray(const DynamicIntArray &o) {
+DynamicPointArray::DynamicPointArray(const DynamicPointArray &o) {
     this->size = o.size;
-    this->data = new int[o.size];
+    this->data = new Point[o.size];
     for(int i = 0; i < size; i++)
         data[i] = o.data[i];
 }
 
-int DynamicIntArray::getSize() const {
+int DynamicPointArray::getSize() const {
     return size;
 }
 
-void DynamicIntArray::print() const {
+void DynamicPointArray::print() const {
     std::cout << "[ ";
-    for(int i = 0; i < size; i++)
-        std::cout << data[i] << " ";
+    for(int i = 0; i < size; i++) {
+        data[i].print();
+        std::cout << " ";
+        }
     std::cout << "]" << std::endl;
 }
 
-void DynamicIntArray::push_back(int elem) {
+void DynamicPointArray::push_back(Point elem) {
     // 1
-    int *tmp = new int[size + 1];
+    Point *tmp = new Point[size + 1];
     // 2
     for(int i = 0; i < size; i++)
         tmp[i] = data[i];
@@ -47,9 +49,9 @@ void DynamicIntArray::push_back(int elem) {
     data = tmp;
 }
 
-void DynamicIntArray::insert(int elem, int pos) {
+void DynamicPointArray::insert(Point elem, int pos) {
     // 1
-    int *tmp = new int[size + 1];
+    Point *tmp = new Point[size + 1];
     // 2
     for(int i = 0, j = 0; i < size; i++, j++) {
         if( j == pos) {
@@ -67,8 +69,8 @@ void DynamicIntArray::insert(int elem, int pos) {
     data = tmp;
 } 
 
-void DynamicIntArray::remove(int pos) {
-    int *tmp = new int[size - 1];
+void DynamicPointArray::remove(int pos) {
+    Point *tmp = new Point[size - 1];
 
     for (int i = 0, j = 0; i < size; i++, j++){
         if (j == pos) {
@@ -84,7 +86,7 @@ void DynamicIntArray::remove(int pos) {
     data = tmp;
 }
 
-DynamicIntArray::~DynamicIntArray() {
+DynamicPointArray::~DynamicPointArray() {
     delete [] data;
 }
 
