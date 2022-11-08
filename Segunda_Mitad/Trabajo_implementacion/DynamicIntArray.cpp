@@ -33,7 +33,7 @@ void DynamicIntArray::print() const {
 
 void DynamicIntArray::push_back(int elem) {
     // 1
-    int *tmp = new int[size + 1];
+    int *tmp = new  [size + 1];
     // 2
     for(int i = 0; i < size; i++)
         tmp[i] = data[i];
